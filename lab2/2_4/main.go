@@ -3,13 +3,12 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func main() {
 	var a string
-	fmt.Fscan(os.Stdin, &a)
-	fmt.Println(len(a))
+	fmt.Scanln(&a)
+	fmt.Print(length(a))
 }
 func length(a string) int {
 	return len(a)

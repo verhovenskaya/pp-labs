@@ -6,20 +6,31 @@ import (
 	"os"
 )
 
-func main() {
-	var a int
-	var b int
-	var c int
-	fmt.Println("Введите а:")
-	fmt.Fscan(os.Stdin, &a)
-	fmt.Println("Введите b:")
-	fmt.Fscan(os.Stdin, &b)
-	fmt.Println("Введите c:")
-	fmt.Fscan(os.Stdin, &c)
-	fmt.Println(square(a, b, c))
-
+// Структура Rectangle, представляющая прямоугольник
+type Rectangle struct {
+	Width  int
+	Height int
 }
-func square(a, b, c int) int {
-	s := a * b * c
-	return s
+
+// Метод Area для вычисления площади прямоугольника
+func (r Rectangle) Area() int {
+	return r.Width * r.Height
+}
+
+func main() {
+	var width, height int
+
+	// Ввод данных от пользователя
+	fmt.Println("Введите ширину прямоугольника:")
+	fmt.Fscan(os.Stdin, &width)
+
+	fmt.Println("Введите высоту прямоугольника:")
+	fmt.Fscan(os.Stdin, &height)
+
+	// Создание экземпляра структуры Rectangle
+	rect := Rectangle{Width: width, Height: height}
+
+	// Вычисление площади и вывод результата
+	area := rect.Area()
+	fmt.Println("Площадь прямоугольника:", area)
 }
