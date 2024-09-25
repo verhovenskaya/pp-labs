@@ -71,20 +71,17 @@ func (b Book) String() string {
 }
 
 func main() {
-	// Пример использования Person
 	person := Person{name: "Иван", age: 30}
 	fmt.Println(person.Info())
 	person.birthday()
 	fmt.Println("После дня рождения:", person.Info())
 
-	// Пример использования Circle и Rectangle
-	circle := Circle{radius: 5}
-	rectangle := Rectangle{width: 4, height: 3}
+	circle := Circle{radius: 7}
+	rectangle := Rectangle{width: 6, height: 3}
 
 	shapes := []Shape{circle, rectangle}
 	PrintAreas(shapes)
 
-	// Пример использования Book и интерфейса Stringer
 	book := Book{title: "1984", author: "Джордж Оруэлл"}
 	fmt.Println(book.String())
 }
