@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"pp-labs/lab3/mathutils"
 	"pp-labs/lab3/stringutils"
 )
@@ -17,7 +18,7 @@ func main() {
 	//Переворот строки
 	fmt.Println("Введите строку для переворота:")
 	var str string
-	fmt.Scanln(&str)
+	fmt.Fscan(os.Stdin, &str)
 	reversedStr := stringutils.Reverse(str)
 	fmt.Printf("Перевернутая строка: %s\n", reversedStr)
 
@@ -33,7 +34,7 @@ func main() {
 	slice = append(slice, 6)
 	fmt.Println("Срез после добавления:", slice)
 
-	//Удаление элемента из среза ---
+	//Удаление элемента из среза
 	slice = append(slice[:2], slice[3:]...) // удаляем 3-ий элемент
 	fmt.Println("Срез после удаления:", slice)
 
