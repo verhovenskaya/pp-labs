@@ -9,7 +9,7 @@ import (
 
 // Функция для расчета факториала
 func factorial(n int, wg *sync.WaitGroup) {
-	defer wg.Done()
+	defer wg.Done()             //уменьшает внутренний счетчик на единицу
 	time.Sleep(2 * time.Second) // Имитация задержки
 	result := 1
 	for i := 1; i <= n; i++ {
